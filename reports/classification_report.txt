@@ -1,0 +1,16 @@
+=====================================================
+      HAND GESTURE RECOGNITION EVALUATION REPORT      
+=====================================================
+
+                          precision    recall  f1-score   support
+
+     Tangan Mengepal (0)     1.0000    1.0000    1.0000        45
+ Satu Jari Terangkat (1)     1.0000    1.0000    1.0000        45
+  Dua Jari Terangkat (2)     0.4510    0.5111    0.4792        45
+ Tiga Jari Terangkat (3)     0.4359    0.3778    0.4048        45
+Empat Jari Terangkat (4)     1.0000    1.0000    1.0000        45
+   Lima Jari Terbuka (5)     1.0000    1.0000    1.0000        45
+
+                accuracy                         0.8148       270
+               macro avg     0.8145    0.8148    0.8140       270
+            weighted avg     0.8145    0.8148    0.8140       270

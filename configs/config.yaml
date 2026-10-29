@@ -1,0 +1,60 @@
+# ==========================================
+# Hand Gesture Recognition System Configuration
+# PRD Version: 1.0
+# ==========================================
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  dataset_path: "data/processed/synthetic_landmarks_demo.csv"
+  train_size: 0.70
+  val_size: 0.15
+  test_size: 0.15
+  random_state: 42
+  num_landmarks: 21
+  coords_per_landmark: 3  # x, y, z
+
+normalization:
+  method: "wrist_centered_scale_invariant"
+  center_landmark_idx: 0  # Wrist (landmark 0)
+  epsilon: 1.0e-6
+
+labels:
+  0: "Tangan Mengepal (0)"
+  1: "Satu Jari Terangkat (1)"
+  2: "Dua Jari Terangkat (2)"
+  3: "Tiga Jari Terangkat (3)"
+  4: "Empat Jari Terangkat (4)"
+  5: "Lima Jari Terbuka (5)"
+
+gestures:
+  0: "number_0"
+  1: "number_1"
+  2: "number_2"
+  3: "number_3"
+  4: "number_4"
+  5: "number_5"
+
+model:
+  type: "RandomForest"
+  n_estimators: 200
+  max_depth: 15
+  min_samples_split: 2
+  min_samples_leaf: 1
+  class_weight: "balanced"
+  random_state: 42
+  save_path: "models/gesture_classifier.joblib"
+  metadata_path: "models/metadata.json"
+
+inference:
+  confidence_threshold: 0.60
+  max_num_hands: 1
+  min_detection_confidence: 0.65
+  min_tracking_confidence: 0.65
+
+reports:
+  report_dir: "reports"
+  classification_report: "reports/classification_report.txt"
+  confusion_matrix_img: "reports/confusion_matrix.png"
+  metrics_json: "reports/metrics.json"
+  comparison_csv: "reports/model_comparison.csv"
